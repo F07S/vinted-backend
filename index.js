@@ -26,7 +26,7 @@ app.use(offerRoutes);
 
 // Route to say Hello
 app.get("/", (req, res) => {
-  res.json("Welcome to my server!");
+  res.json("Hello and welcome to my server!");
 });
 
 app.all("*", (req, res) => {
