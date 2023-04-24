@@ -1,11 +1,18 @@
 const mongoose = require("mongoose");
 
 const User = mongoose.model("User", {
-  email: String,
-  account: {
-    username: String,
-    avatar: Object, // nous verrons plus tard comment uploader une image
+  email: {
+    unique: true,
+    type: String,
   },
+  account: {
+    username: {
+      required: true,
+      type: String,
+    },
+    avatar: Object,
+  },
+  favourites: Array,
   newsletter: Boolean,
   token: String,
   hash: String,
